@@ -2,6 +2,7 @@ import requests
 import json
 from flask import Flask
 
+#11
 def get_valutes_list():
     url = 'https://www.cbr-xml-daily.ru/daily_json.js'
     response = requests.get(url)
