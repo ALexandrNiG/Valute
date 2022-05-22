@@ -7,7 +7,17 @@
 # Пример работы: Введите элементы списка через запятую: 2,3,4,5,5,6,5,3,9
 # Результат: 2, 4, 6, 9
 
+# Уникальные
 numbers = input('Введите элементы списка через запятую: ')
 unique_numbers = list(set(numbers))
 unique_numbers.remove(',')
 print(unique_numbers)
+
+# Не повторяющиеся
+numbers_1 = input('Введите элементы списка через запятую: ')
+one_numbers = list(numbers_1.split(","))
+res = []
+for i in one_numbers:
+    if one_numbers.count(i) ==1:
+        res.append(i)
+print(res)
