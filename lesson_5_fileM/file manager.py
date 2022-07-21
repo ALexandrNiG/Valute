@@ -41,6 +41,8 @@
 import os
 import shutil
 import sys
+from C:\Users\All\PycharmProjects\Valute\basics_3_lesson\victory.py import victori
+import pathlib
 
 while True:
     print('1 создать папку')
@@ -71,19 +73,19 @@ while True:
         print(os.listdir())
 
     elif choice == '5':
-
+        print(os.path.isdir())
         pass
     elif choice == '6':
-
+        print(os.path.isfile())
         pass
     elif choice == '7':
         print(sys.platform)
 
     elif choice == '8':
-
+        print("Александр Николаевич")
         pass
     elif choice == '9':
-
+        victori()
         pass
     elif choice == '10':
 
