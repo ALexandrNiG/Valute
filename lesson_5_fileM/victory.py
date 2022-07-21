@@ -48,3 +48,5 @@ def victory():
     print('Верных ответов: ', true_answear)
     print('Неверных ответов: ', 5 - true_answear)
     print("Попробуйте снова.")
+
+
