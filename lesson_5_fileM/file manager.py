@@ -41,6 +41,11 @@
 import os
 import shutil
 import sys
+import victory
+import shop
+import pathlib
+from os import walk
+
 
 while True:
     print('1 создать папку')
@@ -62,31 +67,38 @@ while True:
         pass
     elif choice == '2':
         namedell = input("Введите имя удаляемой папки/файла")
-        os.rmdir(namedell)
+        if (os.path.isfile(namedell)):
+            os.remove(namedell)
+        else:
+            os.rmdir(namedell)
         pass
     elif choice == '3':
-        shutil.copy()
+        copyname = input("Введите имя копируемой папки/файла")
+        name2 = input("Введите имя копии файла папки/файла")
+        shutil.copyfile(copyname,name2)
+
         pass
     elif choice == '4':
         print(os.listdir())
 
     elif choice == '5':
-
-        pass
+        for (dirpath, dirnames, filenames) in walk('.'):
+            print(dirnames)
     elif choice == '6':
-
+        for (dirpath, dirnames, filenames) in walk("."):
+            print(filenames)
         pass
     elif choice == '7':
         print(sys.platform)
 
     elif choice == '8':
-
+        print("Александр Николаевич")
         pass
     elif choice == '9':
-
+        victory.victory()
         pass
     elif choice == '10':
-
+        shop.shop()
         pass
     elif choice == '11':
         break
