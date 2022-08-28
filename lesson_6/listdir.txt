@@ -1,0 +1,4 @@
+dirs:['__pycache__']
+files:['cash.txt', 'file manager.py', 'listdir.txt', 'shop.py', 'story.txt', 'victory.py']
+dirs:[]
+files:['shop.cpython-39.pyc', 'victory.cpython-39.pyc']
