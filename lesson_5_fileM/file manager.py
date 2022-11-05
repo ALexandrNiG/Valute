@@ -82,12 +82,16 @@ while True:
         print(os.listdir())
 
     elif choice == '5':
-        for (dirpath, dirnames, filenames) in walk('.'):
-            print(dirnames)
+        # for (dirpath, dirnames, filenames) in walk('.'):
+        #     print(dirnames)
+        print(dirpath for (dirpath, dirnames, filenames) in walk('.')) # меняем на тернарный оператор
+
     elif choice == '6':
-        for (dirpath, dirnames, filenames) in walk("."):
-            print(filenames)
+        # for (dirpath, dirnames, filenames) in walk("."):
+        #     print(filenames)
+        print(filenames for (dirpath, dirnames, filenames) in walk('.')) # меняем на тернарный оператор
         pass
+
     elif choice == '7':
         print(sys.platform)
 
