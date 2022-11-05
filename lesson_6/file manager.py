@@ -54,21 +54,27 @@ while True:
     elif choice == '5':
         with open("listdir.txt", "w+", encoding='utf-8') as f:
 
-            for (dirpath, dirnames, filenames) in walk('.'):
-                print(dirpath)
+            # for (dirpath, dirnames, filenames) in walk('.'):
+            #     print(dirpath)
+            print(dirpath for (dirpath, dirnames, filenames) in walk('.'))
+
                 coord = {'dirs': dirnames, 'files': filenames}
 
 
-                for key, val in coord.items():
-                    f.write('{}:{}\n'.format(key, val))
+                # for key, val in coord.items():
+                #     f.write('{}:{}\n'.format(key, val))
+                (f.write('{}:{}\n'.format(key, val)) for key, val in coord.items())
 
 
     elif choice == '6':
-        for (dirpath, dirnames, filenames) in walk('.'):
-            print(dirnames)
+        # for (dirpath, dirnames, filenames) in walk('.'):
+        #     print(dirnames)
+        print(dirnames for (dirpath, dirnames, filenames) in walk('.'))
+
     elif choice == '7':
-        for (dirpath, dirnames, filenames) in walk("."):
-            print(filenames)
+        # for (dirpath, dirnames, filenames) in walk("."):
+        #     print(filenames)
+        print(filenames for (dirpath, dirnames, filenames) in walk('.'))
         pass
     elif choice == '8':
         print(sys.platform)
@@ -84,5 +90,6 @@ while True:
         pass
     elif choice == '12':
         break
-    else:
+    # else: меняем на :
+    except:
         print('Неверный пункт меню')
