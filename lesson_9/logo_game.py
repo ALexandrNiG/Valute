@@ -74,8 +74,6 @@ class Card:
 
     def closed(self) -> bool:
         return set(self.__data) == {self.__emptynum, self.__crossednum}
-
-
 class Game:
     __usercard = None
     __compcard = None
@@ -129,3 +127,4 @@ if __name__ == '__main__':
             elif score == 2:
                 print('You lose')
                 break
+
