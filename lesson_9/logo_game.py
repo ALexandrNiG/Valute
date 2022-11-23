@@ -99,7 +99,11 @@ class Game:
         print(f'----- Ваша карточка ------\n{self.__usercard}')
         print(f'-- Карточка компьютера ---\n{self.__compcard}')
 
-        useranswer = input('Зачеркнуть цифру? (y/n)').lower().strip()
+        useranswer = input('Зачеркнуть цифру? (Y/N)').lower().strip()
+
+        while useranswer not in 'YyNn':
+            useranswer = input('Некорректный ввод. Зачеркнуть цифру (Y/N)? ')
+
         if useranswer == 'y' and not keg in self.__usercard or \
                 useranswer != 'y' and keg in self.__usercard:
             return 2
