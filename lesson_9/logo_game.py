@@ -74,6 +74,21 @@ class Card:
 
     def closed(self) -> bool:
         return set(self.__data) == {self.__emptynum, self.__crossednum}
+    @property
+    def is_empty(self):
+        """
+        Проверка на отсутствие цифр в карточке.
+        :return: bool
+        """
+        return len(generate_unique_numbers(self.cart)) == 0
+
+    def is_num_to_cart(self, num):
+        """
+        Проверка присутствия номера в карточке
+        :param num: искомый номер
+        :return: bool
+        """
+        return any([item.count(num) for item in self.cart])
 class Game:
     __usercard = None
     __compcard = None
