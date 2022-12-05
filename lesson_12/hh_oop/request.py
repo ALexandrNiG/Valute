@@ -33,7 +33,7 @@ if search_by_area_res:
     hh_dict.init_areas()
     search_res.areas_dict = hh_dict.areas
     while area_str not in search_res.areas_dict:
-        area_str = input('Введите регион поиска: ')
+        area_str = input('Введите регион поиска: ').lower()
     params['area'] = search_res.areas_dict[area_str]
     search_res.search_area = area_str
 params['page'] = 0

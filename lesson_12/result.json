@@ -1,0 +1,1 @@
+[{"keywords": "data", "count": 80, "down": 246281.89, "up": 300173.78, "requirements": [{"name": "python", "count": 48, "percent": 60.0}, {"name": "sql", "count": 37, "percent": 46.25}, {"name": "data", "count": 22, "percent": 27.5}, {"name": "ml", "count": 21, "percent": 26.25}, {"name": "pandas", "count": 20, "percent": 25.0}]}]
