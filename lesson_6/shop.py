@@ -27,40 +27,42 @@ with open('cash.txt', 'r') as f:
     # cash = f.read()
     print(cash)
 while True:
-    print('1. пополнение счета')
-    print('2. покупка')
-    print('3. история покупок')
-    print('4. выход')
+    try:
+        print('1. пополнение счета')
+        print('2. покупка')
+        print('3. история покупок')
+        print('4. выход')
 
-    choice = input('Выберите пункт меню ')
-    if choice == '1':
-        result = int(input("Введите сумму "))
-        cash += result
-        pass
-    elif choice == '2':
-        print(cash)
-        product = int(input("Введите стоимость товара "))
+        choice = input('Выберите пункт меню ')
+        if choice == '1':
+            result = int(input("Введите сумму "))
+            cash += result
+            pass
+        elif choice == '2':
+            print(cash)
+            product = int(input("Введите стоимость товара "))
 
-        if cash - product >= 0:
-            cash = cash - product
-            name = str(input("Введите наименование товара "))
-            story[name] = product
-            with open('story.txt', 'w', encoding='utf-8') as out:
-                for key, val in story.items():
-                    out.write('{}:{}\n'.format(key, val))
+            if cash - product >= 0:
+                cash = cash - product
+                name = str(input("Введите наименование товара "))
+                story[name] = product
+                with open('story.txt', 'w', encoding='utf-8') as out:
+                    for key, val in story.items():
+                        out.write('{}:{}\n'.format(key, val))
 
-        else:
-            сash = cash + product
-            print("Нехватает средств на счете")
-        pass
-    elif choice == '3':
+            else:
+                сash = cash + product
+                print("Нехватает средств на счете")
+            pass
+        elif choice == '3':
 
-        print(story)
-        pass
-    elif choice == '4':
-        with open('cash.txt', 'w') as f:
-            # сash = str(cash)
-            f.write(str(cash))
-        break
-    else:
+            print(story)
+            pass
+        elif choice == '4':
+            with open('cash.txt', 'w') as f:
+                # сash = str(cash)
+                f.write(str(cash))
+            break
+    # else:
+    except:
         print('Неверный пункт меню')
