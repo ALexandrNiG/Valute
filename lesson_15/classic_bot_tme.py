@@ -7,8 +7,17 @@ import pprint
 # Импорт библиотеки time
 import time
 
+from os import getenv
+# библиотека для загрузки данных из env
+from dotenv import load_dotenv
+# метода ищет файл env и переменные из него
+load_dotenv()
+
+# достает из файла переменную token
+TOKEN = getenv('TOKEN')
+
+
 # Необходимо скопировать свой token
-TOKEN = '5962545375:AAGvOCth5vhaYmdibRPi9ULWAiVh8gr5SNk'
 # Зададим переменную с информацией о боте
 BOT_URL = f'https://api.telegram.org/bot{TOKEN}'
 print('# Выведем информацию: BOT_URL = ', BOT_URL)

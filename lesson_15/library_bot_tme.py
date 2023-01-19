@@ -8,8 +8,16 @@ import time
 # Импорт библиотеки os
 import os
 
-# Необходимо скопировать свой token
-TOKEN = '5962545375:AAGvOCth5vhaYmdibRPi9ULWAiVh8gr5SNk'
+from os import getenv
+# библиотека для загрузки данных из env
+from dotenv import load_dotenv
+# метода ищет файл env и переменные из него
+load_dotenv()
+
+# достает из файла переменную token
+TOKEN = getenv('TOKEN')
+
+
 # Зададим переменную с информацией о боте
 bot = telebot.TeleBot(TOKEN)    # Определим бота, указав token
 @bot.message_handler(commands=['start'])      # С помощью декоратора регистрируем функцию send_welcome как обработчик
