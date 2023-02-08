@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Поиск</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/assets/css/styles_Form.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+            <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container px-4 px-lg-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="/index">Главная</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+         <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Форма для поиска</span>
+            </h1>
+        </header>
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/static/assets/img/glav1.png" alt="..." /></div>
+
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h3>Поиск</h3>
+                            <p class="text-black-50 mb-0">
+
+                            <form action="/about" method="post">
+                              <div class="form-group">
+                                <label for="vacancy">Текст поиска:</label>
+                                     <br>
+                                     <br>
+                                <input type="text" name="vacancy" placeholder="Строка поиска" class="form-control" id="vacancy">
+                                     <br>
+                                     <br>
+                                <label for="wh">Где искать:</label>
+                                <select name="where" class="form-control" id="wh">
+                                    <option value="all">Везде</option>
+                                    <option value="company">В названии компании</option>
+                                    <option selected value="name">В названии вакансии</option>
+                                </select>
+                                  <br>
+                                  <br>
+                                <label for="p">Количество анализируемых страниц</label>
+                                <input type="number" name="pages" value="3" class="form-control" id="p">
+                                <input type="submit" value="Искать вакансию" class="btn btn-primary">
+                               </div>
+                            </form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+            <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts_f.js"></script>
+    </body>
+</html>
