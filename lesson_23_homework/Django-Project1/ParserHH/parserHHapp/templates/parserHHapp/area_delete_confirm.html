@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Регионы {% endblock %}
+
+{% block content %}
+    {% load static %}
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static '/assets/img/glav2.jpg' %}" alt="...">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <dl>
+                        <dt>{{ object.name }}</dt>
+                            <dd>Индекс для hh.ru: {{ object.ind_hh }}</dd>
+                            <dd>Индекс для zarp.ru: {{ object.ind_zarp }}</dd>
+                    </dl>
+                    <form method="post">
+                        {% csrf_token %}
+                        <p>Вы уверены? <button type="submit" class="btn btn-danger">Да</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
