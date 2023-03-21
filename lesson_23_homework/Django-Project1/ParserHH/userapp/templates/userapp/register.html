@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Регистрация {% endblock %}
+
+
+{% block content %}
+    {% load static %}
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static '/assets/img/fon-dlya-prezentatsii.jpg' %}" alt="...">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_div }}
+                        <button type="submit" class="btn btn-danger">Зарегистрировать</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
