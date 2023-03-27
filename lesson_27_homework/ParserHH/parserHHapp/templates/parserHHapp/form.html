@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+    <head>
+{% block title %} Поиск {% endblock %}
+    </head>
+    <body>
+         <header>
+ {% block header %} Форма для поиска {% endblock %}
+        </header>
+{% block content %}
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/static/assets/img/glav1.png" alt="..." /></div>
+
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h3>Поиск</h3>
+                            <p class="text-black-50 mb-0">
+
+                            <form action="{% url 'parserHHapp:about' %}" method="post">
+                            {% csrf_token %}
+                              <div class="form-group">
+                                <label for="vacancy">Текст поиска:</label>
+                                     <br>
+                                     <br>
+                                <input type="text" name="vacancy" placeholder="Строка поиска" class="form-control" id="vacancy">
+                                     <br>
+                                     <br>
+                                <label for="wh">Где искать:</label>
+                                <select name="where" class="form-control" id="wh">
+                                    <option value="all">Везде</option>
+                                    <option value="company">В названии компании</option>
+                                    <option selected value="name">В названии вакансии</option>
+                                </select>
+                                  <br>
+                                  <br>
+                                <label for="p">Количество анализируемых страниц</label>
+                                <input type="number" name="pages" value="3" class="form-control" id="p">
+                                <input type="submit" value="Искать вакансию" class="btn btn-primary">
+                               </div>
+                            </form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+  {% endblock %}
+
+    </body>

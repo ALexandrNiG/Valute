@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+    <head>
+{% block title %} Результат {% endblock %}
+    </head>
+
+<body>
+
+         <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Результаты</span>
+            </h1>
+        </header>
+        <!-- Page Content-->
+        {% block content %}
+        <section class="page-section about-heading">
+            <div class="container" >
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-4 mx-auto" >
+                            <div class="bg-faded rounded p-5" >
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+
+                                <table class="table" >
+                                    <thead class="thead">
+                                        <tr>
+                                            <th scope="row">Вакансия: {{ word.word }}</th>
+                                            <th scope="row">Условия: {{ item.schedule.name }}</th>
+                                            <th scope="row">Ср. верхняя граница: {{ word.up }}руб.</th>
+                                            <th scope="row">Ср. нижняя граница: {{ word.down }}руб.</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <table class="table" >
+                                    <thead class="thead">
+                                        <tr>
+                                            <th scope="col">Номер</th>
+                                            <th scope="col">Название</th>
+                                            <th scope="col">Процент упоминаний</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                          {% for item in skills %}
+                                            <tr>
+                                                <th scope="row">{{ forloop.counter }} </th>
+                                                <td>{{ item.id_skill.name }}</td>
+                                                <td align="right">{{ item.percent }}%</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+</body>
