@@ -1,1 +1,2 @@
-# Django-Project1
+# Django-Project
+добавлен django debug toolbar
